@@ -1,4 +1,5 @@
 
+
 export class Band {
 
   #name;
@@ -8,7 +9,7 @@ export class Band {
   #current;
   #earlier;
 
-  constructor(name, info='', yearstarted= '', yearended= '') {
+  constructor(name, info = '', yearstarted = '', yearended = '') {
     this.#name = name;
     this.#info = info;
     this.#yearstarted = yearstarted;
