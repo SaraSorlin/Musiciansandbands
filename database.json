@@ -1,21 +1,29 @@
 [
   {
-    "Name": "Bandet1",
+    "Name": "band1",
     "Info": "Band",
-    "Yearstarted": 2021,
+    "Yearstarted": 2020,
+    "Yearended": "",
+    "Current": [],
+    "Earlier": []
+  },
+  {
+    "Name": "band3",
+    "Info": "Band",
+    "Yearstarted": 2023,
     "Yearended": "",
     "Current": [
-      "musikern1"
+      "musiker2"
     ],
     "Earlier": []
   },
   {
-    "Name": "musikern1",
+    "Name": "musiker2",
     "Info": "Musiker",
-    "Yearbirth": 2023,
+    "Yearbirth": 1979,
     "Instrument": [],
     "Current": [
-      "Bandet1"
+      "band3"
     ],
     "Earlier": []
   }

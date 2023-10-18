@@ -17,7 +17,7 @@ function remove() {
   if (val <= personLista.getLength() && val >= 1) {
     personLista.removePersonFromList(Number(val) - 1); // Tar det inskrivna valet och minskar med 1. (för arrays index börjar på 0)
   } else {
-    console.log(`The number must be between 1 and ${personLista.getLength()}`);
+    console.log(`Talet måste vara mellan 1 och ${personLista.getLength()}`);
   }
 }
 
