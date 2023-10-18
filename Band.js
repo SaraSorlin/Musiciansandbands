@@ -79,7 +79,6 @@ export default class Band {
       Yearended: this.#yearended,
       Current: this.#current,
       Earlier: this.#earlier
-
     };
   }
 }

@@ -78,7 +78,7 @@ export default class Musiker {
       Instrument: this.#instruments,
       Current: this.#current,
       Earlier: this.#earlier
-
     };
+
   }
 }

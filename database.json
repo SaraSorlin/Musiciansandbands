@@ -4,19 +4,59 @@
     "Info": "Band",
     "Yearstarted": 2021,
     "Current": [
-      null
+      [
+        [
+          null
+        ]
+      ]
     ],
     "Earlier": [
-      null
+      [
+        [
+          null
+        ]
+      ]
     ]
   },
   {
     "Name": "musiker1",
     "Info": "Musiker",
-    "Yearbirth": 2023,
-    "Instrument": [
-      null
+    "Yearbirth": "Musiker",
+    "Current": [
+      [
+        2023
+      ]
     ],
+    "Earlier": [
+      [
+        [
+          null
+        ]
+      ]
+    ],
+    "Instrument": [
+      "Musiker"
+    ]
+  },
+  {
+    "Name": "band 3",
+    "Info": "Band",
+    "Yearstarted": 324,
+    "Current": [
+      [
+        null
+      ]
+    ],
+    "Earlier": [
+      [
+        null
+      ]
+    ]
+  },
+  {
+    "Name": "band4",
+    "Info": "Band",
+    "Yearstarted": 2030,
     "Current": [
       null
     ],
