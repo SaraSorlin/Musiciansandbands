@@ -1,74 +1,72 @@
 import fs from "fs";
-import Hund from "./person.js";
+import Band from "./Band.js";
+import Musiker from "./Musiker.js";
 
-export default class Hundar {
-  #hundLista = []; // Lista som håller alla hund-objekt.
+export default class Personer {
+  #persons = []; // Listan som håller alla musiker och band
 
   constructor() {
-    this.#fetchHundData();
+    this.#fetchData();
   }
 
-  get hundLista() {
-    return this.#hundLista;
+  get persons() {
+    return this.#persons;
   }
 
-  // Läser in alla hundar från "Hundar.json". 
-  #fetchHundData() {
-    const jsonString = fs.readFileSync("hundar.json");
+  // Läser in alla musiker och band från "database.json". 
+  #fetchData() {
+    const jsonString = fs.readFileSync("database.json");
     const data = JSON.parse(jsonString);
-
-    // Populerar #hundLista med hund-objekt, då kommer vi få tillgång till alla metoder i Hund-klassen.
+    // Populerar #Lista med musiker och band -objekt, då kommer vi få tillgång till alla metoder i klassen.
     for (let i = 0; i < data.length; i++) {
-      this.#hundLista.push(new Hund(data[i].name, data[i].checkedIn));
+      if (data[i].Info === "Band") {
+        this.#persons.push(new Band(data[i].Name, data[i].Yearstarted, data[i].Yearended));
+      } else if (data[i].Info === "Musiker") {
+        this.#persons.push(new Musiker(data[i].Name, data[i].Yearbirth));
+      }
     }
   }
-
   //Skriver ut index och hund-objektens namn 
-  skrivUtHundar() {
-    for (let i = 0; i < this.#hundLista.length; i++) {
-      console.log(`${i + 1}. ${this.#hundLista[i].name}`);
+  skrivUtPersoner() {
+    for (let i = 0; i < this.#persons.length; i++) {
+      console.log(`${i + 1}. ${this.#persons[i].name}`);
     }
   }
 
-  //Skriver ut index, hund-objektens namn och ifall dem är incheckade eller inte
-  skrivUtHundarMedCheckIn() {
-    for (let i = 0; i < this.#hundLista.length; i++) {
-      console.log(`${i + 1}. ${this.#hundLista[i].name} -> ${this.#hundLista[i].checkedIn}`);
-    }
+  addMusikerToList(namemusiker, yearbirth) {
+    this.#persons.push(new Musiker(namemusiker, yearbirth));
+    this.#updateJsonFile(); // Uppdaterar "databasen.json". 
+  }
+
+  addBandToList(nameband, yearstarted) {
+    this.#persons.push(new Band(nameband, yearstarted));
+    this.#updateJsonFile(); // Uppdaterar "databasen.json".
   }
 
 
-  addDogToList(name) {
-    this.#hundLista.push(new Hund(name)); // Lägger till en ny hund i #hundLista.
+  removePersonFromList(index) {
+    this.#persons.splice(index, 1);
     this.#updateJsonFile(); // Uppdaterar "Hundar.json".
-  }
-
-  removeDogFromList(index) {
-    this.#hundLista.splice(index, 1); // Tar bort en hund ifrån #hundLista.
-    this.#updateJsonFile(); // Uppdaterar "Hundar.json".
-  }
-
-  #updateJsonFile() {
-    let tempList = []; // Skapar en temporär lista som ska sparas i "hundar.json".
-
-    for (let i = 0; i < this.#hundLista.length; i++) {
-      // Använder dataInfo som ger mig ett nytt objekt med alla hund-objektet egenskaps information.
-      // Om vi sparar hund-objektet direkt, kommer inte informationen från privata egenskaper med.
-      tempList.push(this.#hundLista[i].dataInfo());
-    }
-
-    fs.writeFileSync('./hundar.json', JSON.stringify(tempList, null, 2), (err) => {
-      if (err) throw err;
-      console.log('Data written to file');
-    });
-  }
-
-  checkInDog(index) {
-    this.#hundLista[index].checkInAndOut(); // Ändrar så en hund blir incheckad eller checkar ut.  
-    this.#updateJsonFile();
   }
 
   getLength() {
-    return this.#hundLista.length;
+    return this.#persons.length;
   }
-} 
+
+  #updateJsonFile() {
+    let tempList = []; // Skapar en temporär lista som ska sparas i "databasen.json".
+
+    for (let i = 0; i < this.#persons.length; i++) {
+      // Använder dataInfo som ger mig ett nytt objekt med alla musiker och band objektet egenskaps information.
+      // Om vi sparar musiker och band-objektet direkt, kommer inte informationen från privata egenskaper med.
+      if (this.#persons[i] instanceof Band) {
+        tempList.push(this.#persons[i].databandInfo());
+      } else if (this.#persons[i] instanceof Musiker) {
+        tempList.push(this.#persons[i].datamusikerInfo());
+      }
+    }
+
+    fs.writeFileSync('./database.json', JSON.stringify(tempList, null, 2));
+    console.log('Data written to file');
+  }
+}
