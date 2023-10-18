@@ -8,13 +8,13 @@ export default class Band {
   #current;
   #earlier;
 
-  constructor(name, yearstarted = '', yearended = '') {
+  constructor(name, yearstarted, yearended, current, earlier) {
     this.#name = name;
     this.#info = 'Band';
     this.#yearstarted = yearstarted;
     this.#yearended = yearended;
-    this.#current = [];
-    this.#earlier = [];
+    this.#current = [current];
+    this.#earlier = [earlier];
   }
 
   get name() {
@@ -26,11 +26,11 @@ export default class Band {
   }
 
 
-  get information() {
+  get info() {
     return this.#info;
   }
 
-  set information(newinfo) {
+  set info(newinfo) {
     this.#info = newinfo;
   }
 
@@ -78,7 +78,7 @@ export default class Band {
       Yearstarted: this.#yearstarted,
       Yearended: this.#yearended,
       Current: this.#current,
-      Earlier: this.#earlier,
+      Earlier: this.#earlier
 
     };
   }

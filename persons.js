@@ -20,17 +20,29 @@ export default class Personer {
     // Populerar #Lista med musiker och band -objekt, då kommer vi få tillgång till alla metoder i klassen.
     for (let i = 0; i < data.length; i++) {
       if (data[i].Info === "Band") {
-        this.#persons.push(new Band(data[i].Name, data[i].Yearstarted, data[i].Yearended));
+        this.#persons.push(new Band(data[i].Name, data[i].Yearstarted, data[i].Yearended, data[i].Current, data[i].Earlier));
       } else if (data[i].Info === "Musiker") {
-        this.#persons.push(new Musiker(data[i].Name, data[i].Yearbirth));
+        this.#persons.push(new Musiker(data[i].Name, data[i].Info, data[i].Yearbirth, data[i].Instrument, data[i].Current, data[i].Earlier));
       }
     }
   }
+
+
   //Skriver ut index och hund-objektens namn 
   skrivUtPersoner() {
     for (let i = 0; i < this.#persons.length; i++) {
-      console.log(`${i + 1}. ${this.#persons[i].name}`);
+      if (this.#persons[i] instanceof Band) {
+
+        console.log(`${i + 1}. Namn: ${this.#persons[i].name},  Information: ${this.#persons[i].info},  Årgrundad: ${this.#persons[i].yearstarted},  År avvecklat:${this.#persons[i].yearended},    Nuvarande band medlemmar: ${this.#persons[i].current},  Tidigare medlemmar: ${this.#persons[i].earlier}`);
+      }
+      else if (this.#persons[i] instanceof Musiker) {
+
+        console.log(`${i + 1}. Namn: ${this.#persons[i].name},  Information: ${this.#persons[i].info},  Född: ${this.#persons[i].yearbirth},  Instrument :${this.#persons[i].instruments},    Nuvarande band medlemmar: ${this.#persons[i].current},  Tidigare medlemmar: ${this.#persons[i].earlier}`);
+
+      }
+
     }
+
   }
 
   addMusikerToList(namemusiker, yearbirth) {

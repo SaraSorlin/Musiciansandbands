@@ -4,17 +4,17 @@ export default class Musiker {
   #name;
   #info;
   #yearbirth;
-  #instrumentations;
+  #instruments;
   #current;
   #earlier;
 
-  constructor(name, yearbirth = '') {
+  constructor(name, yearbirth, instruments, current, earlier) {
     this.#name = name;
     this.#info = 'Musiker';
     this.#yearbirth = yearbirth;
-    this.#instrumentations = [];
-    this.#current = [];
-    this.#earlier = [];
+    this.#instruments = [instruments];
+    this.#current = [current];
+    this.#earlier = [earlier];
   }
 
   get name() {
@@ -29,20 +29,24 @@ export default class Musiker {
     return this.#info;
   }
 
-
-  get Instrument() {
-    return this.#instrumentations;
+  set info(newinfo) {
+    return this.#info = newinfo;
   }
 
-  set Instrument(newinstrument) {
-    this.#instrumentations.push(newinstrument);
+
+  get instruments() {
+    return this.#instruments;
   }
 
-  get YearBirth() {
+  set instruments(newinstrument) {
+    this.#instruments.push(newinstrument);
+  }
+
+  get yearbirth() {
     return this.#yearbirth;
   }
 
-  set YearBirth(newyearbirth) {
+  set yearbirth(newyearbirth) {
     this.#yearbirth = newyearbirth;
   }
 
@@ -62,6 +66,7 @@ export default class Musiker {
     return this.#earlier;
   }
 
+
   // Skapar ett objekt med musikerns egenskaps information. 
   // Används när vi ska skicka in till "databasen.json". 
 
@@ -70,9 +75,9 @@ export default class Musiker {
       Name: this.#name,
       Info: this.#info,
       Yearbirth: this.#yearbirth,
-      Instrument: this.#instrumentations,
+      Instrument: this.#instruments,
       Current: this.#current,
-      Earlier: this.#earlier,
+      Earlier: this.#earlier
 
     };
   }

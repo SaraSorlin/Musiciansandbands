@@ -2,37 +2,39 @@
   {
     "Name": "band1",
     "Info": "Band",
-    "Yearstarted": 2020,
-    "Yearended": "",
+    "Yearstarted": 0,
     "Current": [
-      "musiker2"
+      null,
+      "musikern1"
     ],
-    "Earlier": []
+    "Earlier": [
+      null
+    ]
   },
   {
-    "Name": "band3",
+    "Name": "band2",
     "Info": "Band",
-    "Yearstarted": 2023,
-    "Yearended": "",
-    "Current": [],
-    "Earlier": []
+    "Yearstarted": 2019,
+    "Current": [
+      null
+    ],
+    "Earlier": [
+      null
+    ]
   },
   {
-    "Name": "musiker2",
+    "Name": "musikern1",
     "Info": "Musiker",
-    "Yearbirth": 1979,
-    "Instrument": [],
+    "Yearbirth": 2021,
+    "Instrument": [
+      null
+    ],
     "Current": [
+      null,
       "band1"
     ],
-    "Earlier": []
-  },
-  {
-    "Name": "",
-    "Info": "Band",
-    "Yearstarted": 0,
-    "Yearended": "",
-    "Current": [],
-    "Earlier": []
+    "Earlier": [
+      null
+    ]
   }
 ]
