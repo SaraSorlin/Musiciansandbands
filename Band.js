@@ -8,13 +8,13 @@ export default class Band {
   #current;
   #earlier;
 
-  constructor(name, yearstarted, yearended, current, earlier) {
+  constructor(name, yearstarted, yearended, current = [], earlier = []) {
     this.#name = name;
     this.#info = 'Band';
     this.#yearstarted = yearstarted;
     this.#yearended = yearended;
-    this.#current = [current];
-    this.#earlier = [earlier];
+    this.#current = current;
+    this.#earlier = earlier;
   }
 
   get name() {

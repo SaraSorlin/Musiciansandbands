@@ -96,11 +96,26 @@ while (run) {
 
 
     case "6": // Ta bort en musiker ifrån ett band
+      console.clear();
+      personLista.skrivUtPersoner();
 
+      const musikerIndexToRemove = Number(prompt('Ange numret för musikanten som ska tas bort från ett band: ')) - 1;
+      const bandIndexToRemoveFrom = Number(prompt('Ange numret som bandet har i listan: ')) - 1;
+
+      if (!isNaN(musikerIndexToRemove && bandIndexToRemoveFrom) && musikerIndexToRemove < personLista.getLength() && bandIndexToRemoveFrom < personLista.getLength()) {
+        const removedMusiker = personLista.removeMusikerFromBand(musikerIndexToRemove, bandIndexToRemoveFrom);
+        console.log(`Musikern "${removedMusiker}" har tagits bort från bandet.`);
+        console.clear();
+        personLista.skrivUtPersoner();
+      }
+      else {
+        console.log("Ogiltig inmatning. Ange ett giltigt nummer för musiker och band.");
+      }
+
+      prompt('Tryck enter för att återgå till menyn');
       break;
 
-
-    case "7": // Skriv ut inlaggda musiker och band
+    case "7": // Skriv ut information om Musiker och band
       console.clear()
       personLista.skrivUtPersoner(); // 
       prompt('Tryck enter för att återgå till menyn')

@@ -22,7 +22,7 @@ export default class Personer {
       if (data[i].Info === "Band") {
         this.#persons.push(new Band(data[i].Name, data[i].Yearstarted, data[i].Yearended, data[i].Current, data[i].Earlier));
       } else if (data[i].Info === "Musiker") {
-        this.#persons.push(new Musiker(data[i].Name, data[i].Info, data[i].Yearbirth, data[i].Instrument, data[i].Current, data[i].Earlier));
+        this.#persons.push(new Musiker(data[i].Name, data[i].Yearbirth, data[i].Instrument, data[i].Current, data[i].Earlier));
       }
     }
   }
@@ -74,6 +74,29 @@ export default class Personer {
 
     this.#updateJsonFile();
   }
+
+  removeMusikerFromBand(musikerIndex, bandIndex) {
+    const band = this.#persons[bandIndex];
+    const musiker = this.#persons[musikerIndex];
+
+    if (band && musiker) {
+      const musikerName = musiker.name;
+      const musikerIndexInBand = band.current.indexOf(musikerName);
+
+      if (musikerIndexInBand !== -1) {
+        band.current.splice(musikerIndexInBand, 1);
+        this.#updateJsonFile();
+        return musikerName;
+      } else {
+        console.log(`${musikerName} är inte medlem i bandet ${band.name}.`);
+        return null;
+      }
+    } else {
+      console.log("Ogiltig inmatning. Ange giltiga musiker- och bandindex.");
+      return null;
+    }
+  }
+
 
 
 
