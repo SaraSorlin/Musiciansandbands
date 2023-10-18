@@ -74,7 +74,13 @@ while (run) {
       break;
 
     case "5": // Lägg till en musiker till ett band
+      personLista.skrivUtPersoner();
+      const musikerIndex = Number(prompt('Ange numret för musikanten i listan som skall läggas till ett band: ')) - 1; // we subtract 1 because array indexes start from 0
+      const bandIndex = Number(prompt('Ange numret som bandet har i listan: ')) - 1;
 
+      personLista.addMusikerToBand(musikerIndex, bandIndex);
+
+      prompt('Tryck enter för att återgå till menyn')
       break;
 
 
