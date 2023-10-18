@@ -4,10 +4,11 @@
     "Info": "Band",
     "Yearstarted": 2019,
     "Current": [
-      "da singer",
-      "the singer"
+      "da singer"
     ],
-    "Earlier": []
+    "Earlier": [
+      "the singer"
+    ]
   },
   {
     "Name": "The rockers band",
@@ -41,9 +42,10 @@
     "Yearbirth": 1979,
     "Instrument": [],
     "Current": [
-      "Da band 1",
       "The rockers band"
     ],
-    "Earlier": []
+    "Earlier": [
+      "Da band 1"
+    ]
   }
 ]
