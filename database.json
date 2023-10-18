@@ -1,9 +1,49 @@
 [
   {
-    "Name": "b2",
+    "Name": "Da band 1",
     "Info": "Band",
-    "Yearstarted": 0,
+    "Yearstarted": 2019,
+    "Current": [
+      "da singer",
+      "the singer"
+    ],
+    "Earlier": []
+  },
+  {
+    "Name": "The rockers band",
+    "Info": "Band",
+    "Yearstarted": 2023,
+    "Current": [
+      "the singer"
+    ],
+    "Earlier": []
+  },
+  {
+    "Name": "The kings band",
+    "Info": "Band",
+    "Yearstarted": 1990,
     "Current": [],
+    "Earlier": []
+  },
+  {
+    "Name": "da singer",
+    "Info": "Musiker",
+    "Yearbirth": 2022,
+    "Instrument": [],
+    "Current": [
+      "Da band 1"
+    ],
+    "Earlier": []
+  },
+  {
+    "Name": "the singer",
+    "Info": "Musiker",
+    "Yearbirth": 1979,
+    "Instrument": [],
+    "Current": [
+      "Da band 1",
+      "The rockers band"
+    ],
     "Earlier": []
   }
 ]

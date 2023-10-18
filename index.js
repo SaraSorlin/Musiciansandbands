@@ -8,8 +8,9 @@ const prompt = promptSync({ sigint: true });
 const personLista = new Personer();
 
 function remove() {
+  console.log()
   personLista.skrivUtPersoner();
-  const val = prompt("Enter the index of the one you want to remove ->");
+  const val = prompt("Ange index numret på det du vill tabort! ->");
 
   if (Number(val).toString() === "NaN") { // Kollar så att val går att parsa till ett nummer.
     console.log("Måste skriva in ett tal!");

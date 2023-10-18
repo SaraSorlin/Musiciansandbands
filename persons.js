@@ -28,22 +28,27 @@ export default class Personer {
   }
 
 
-  //Skriver ut index och hund-objektens namn 
   skrivUtPersoner() {
     for (let i = 0; i < this.#persons.length; i++) {
-      if (this.#persons[i] instanceof Band) {
+      const person = this.#persons[i];
 
-        console.log(`${i + 1}. Namn: ${this.#persons[i].name},        Information: ${this.#persons[i].info},     Start: ${this.#persons[i].yearstarted},    Slut: ${this.#persons[i].yearended},    Medlemmar: ${this.#persons[i].current},           Tidigare: ${this.#persons[i].earlier}`);
+      console.log(`${i + 1}. Namn: ${person.name}`);
+      console.log(`   Information: ${person.info}`);
+
+      if (person instanceof Musiker) {
+        console.log(`   Född: ${person.yearbirth}`);
+        console.log(`   Instrument: ${person.instruments}`);
+      } else if (person instanceof Band) {
+        console.log(`   Start: ${person.yearstarted}`);
+        console.log(`   Slut: ${person.yearended || 'N/A'}`);
       }
-      else if (this.#persons[i] instanceof Musiker) {
 
-        console.log(`${i + 1}. Namn: ${this.#persons[i].name},      Information: ${this.#persons[i].info},  Född: ${this.#persons[i].yearbirth},    Instrument: ${this.#persons[i].instruments},     Medlemmar: ${this.#persons[i].current},           Tidigare: ${this.#persons[i].earlier}`);
-
-      }
-
+      console.log(`   Medlemmar: ${person.current.join(', ') || 'Inga nuvarande medlemmar'}`);
+      console.log(`   Tidigare: ${person.earlier.join(', ') || 'Inga tidigare medlemmar'}`);
+      console.log('');
     }
-
   }
+
 
   addMusikerToList(namemusiker, yearbirth) {
     this.#persons.push(new Musiker(namemusiker, yearbirth));
