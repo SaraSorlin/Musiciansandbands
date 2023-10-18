@@ -44,63 +44,78 @@ while (run) {
 
   switch (val) {
 
-
     case "1": // Skapa ett band
+      console.clear()
       const nameofband = prompt('Ange namnet på bandet: ');
       const yearstarted = Number(prompt('Ange årtalet som bandet skappades: '));
       if (!isNaN(yearstarted)) {
         personLista.addBandToList(nameofband, yearstarted);
       } else {
-        console.log("Ogiltigt inmatning av år ange ett tal.");
+        prompt('Ogiltigt inmatning av år ange ett tal!, Tryck enter för att återgå till menyn.')
+
       }
       break;
+
 
     case "2": // Ta bort ett band
       remove();
       break;
 
+
     case "3": // Skapa en musiker
+      console.clear()
       const nameofartist = prompt('Ange namnet på musikanten: ');
       const yearbirth = Number(prompt('Ange födelse året: '));
       if (!isNaN(yearbirth)) {
         personLista.addMusikerToList(nameofartist, yearbirth);
       } else {
-        console.log("Ogiltigt inmatning av år ange ett tal.");
+        prompt('Ogiltigt inmatning av år ange ett tal!, Tryck enter för att återgå till menyn.')
       }
       break;
+
 
     case "4": // Ta bort en musiker
       remove();
       break;
 
+
     case "5": // Lägg till en musiker till ett band
       personLista.skrivUtPersoner();
-      const musikerIndex = Number(prompt('Ange numret för musikanten i listan som skall läggas till ett band: ')) - 1; // we subtract 1 because array indexes start from 0
+      const musikerIndex = Number(prompt('Ange numret för musikanten i listan som skall läggas till ett band: ')) - 1; // drar bort 1 då index börjar på 0
       const bandIndex = Number(prompt('Ange numret som bandet har i listan: ')) - 1;
 
-      personLista.addMusikerToBand(musikerIndex, bandIndex);
+      if (!isNaN(musikerIndex && bandIndex) && musikerIndex < personLista.getLength() && bandIndex < personLista.getLength()) {
+        personLista.addMusikerToBand(musikerIndex, bandIndex);
+      } else {
+        console.log("Ogiltigt inmatning ange ett tal som är inom giltigt område enligt listan.");
+      }
 
       prompt('Tryck enter för att återgå till menyn')
       break;
-
 
 
     case "6": // Ta bort en musiker ifrån ett band
 
       break;
 
+
     case "7": // Skriv ut inlaggda musiker och band
+      console.clear()
       personLista.skrivUtPersoner(); // 
       prompt('Tryck enter för att återgå till menyn')
       break;
+
 
     case "8": // Avsluta programmet
       run = false;
       break;
 
+
     default:
       console.log('Ogiltigt meny vall försök igen!');
       prompt('Tryck enter för att återgå till menyn')
       break;
+
   }
+
 }
