@@ -33,11 +33,11 @@ export default class Personer {
     for (let i = 0; i < this.#persons.length; i++) {
       if (this.#persons[i] instanceof Band) {
 
-        console.log(`${i + 1}. Namn: ${this.#persons[i].name},  Information: ${this.#persons[i].info},  Årgrundad: ${this.#persons[i].yearstarted},  År avvecklat:${this.#persons[i].yearended},    Nuvarande band medlemmar: ${this.#persons[i].current},  Tidigare medlemmar: ${this.#persons[i].earlier}`);
+        console.log(`${i + 1}. Namn: ${this.#persons[i].name},  Information: ${this.#persons[i].info},     Start: ${this.#persons[i].yearstarted}, Slut: ${this.#persons[i].yearended},Medlemmar: ${this.#persons[i].current},           Tidigare: ${this.#persons[i].earlier}`);
       }
       else if (this.#persons[i] instanceof Musiker) {
 
-        console.log(`${i + 1}. Namn: ${this.#persons[i].name},  Information: ${this.#persons[i].info},  Född: ${this.#persons[i].yearbirth},  Instrument :${this.#persons[i].instruments},    Nuvarande band medlemmar: ${this.#persons[i].current},  Tidigare medlemmar: ${this.#persons[i].earlier}`);
+        console.log(`${i + 1}. Namn: ${this.#persons[i].name},  Information: ${this.#persons[i].info},  Född: ${this.#persons[i].yearbirth},  Instrument: ${this.#persons[i].instruments},    Medlemmar: ${this.#persons[i].current},           Tidigare: ${this.#persons[i].earlier}`);
 
       }
 
@@ -80,15 +80,19 @@ export default class Personer {
     const musiker = this.#persons[musikerIndex];
 
     if (band && musiker) {
-      const musikerName = musiker.name;
-      const musikerIndexInBand = band.current.indexOf(musikerName);
+      const musikerIndexIncurrent = band.current.indexOf(musiker.name);
+      const bandIndexcurrent = musiker.current.indexOf(band.name);
 
-      if (musikerIndexInBand !== -1) {
-        band.current.splice(musikerIndexInBand, 1);
+      if (musikerIndexIncurrent !== -1) {
+        band.current.splice(musikerIndexIncurrent, 1);
+        musiker.current.splice(bandIndexcurrent, 1);
+
+        band.earlier.push(musiker.name);
+        musiker.earlier.push(band.name);
         this.#updateJsonFile();
-        return musikerName;
+        return musiker.name;
       } else {
-        console.log(`${musikerName} är inte medlem i bandet ${band.name}.`);
+        console.log(`${musiker.name} är inte medlem i bandet ${band.name}.`);
         return null;
       }
     } else {

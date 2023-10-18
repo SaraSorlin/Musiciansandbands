@@ -105,8 +105,6 @@ while (run) {
       if (!isNaN(musikerIndexToRemove && bandIndexToRemoveFrom) && musikerIndexToRemove < personLista.getLength() && bandIndexToRemoveFrom < personLista.getLength()) {
         const removedMusiker = personLista.removeMusikerFromBand(musikerIndexToRemove, bandIndexToRemoveFrom);
         console.log(`Musikern "${removedMusiker}" har tagits bort från bandet.`);
-        console.clear();
-        personLista.skrivUtPersoner();
       }
       else {
         console.log("Ogiltig inmatning. Ange ett giltigt nummer för musiker och band.");
