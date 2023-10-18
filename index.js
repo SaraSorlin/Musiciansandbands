@@ -87,10 +87,11 @@ while (run) {
 
       if (!isNaN(musikerIndex && bandIndex) && musikerIndex < personLista.getLength() && bandIndex < personLista.getLength()) {
         personLista.addMusikerToBand(musikerIndex, bandIndex);
+        console.clear()
+        personLista.skrivUtPersoner();
       } else {
         prompt("Ogiltigt inmatning du angav ett tal som inte är inom giltigt område.");
       }
-
       prompt('Tryck enter för att återgå till menyn')
       break;
 

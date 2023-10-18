@@ -20,7 +20,7 @@ export default class Personer {
     // Populerar #Lista med musiker och band -objekt, då kommer vi få tillgång till alla metoder i klassen.
     for (let i = 0; i < data.length; i++) {
       if (data[i].Info === "Band") {
-        this.#persons.push(new Band(data[i].Name, data[i].Yearstarted, data[i].Yearended, data[i].Current, data[i].Earlier));
+        this.#persons.push(new Band(data[i].Name, data[i].Info, data[i].Yearstarted, data[i].Yearended, data[i].Current, data[i].Earlier));
       } else if (data[i].Info === "Musiker") {
         this.#persons.push(new Musiker(data[i].Name, data[i].Info, data[i].Yearbirth, data[i].Instrument, data[i].Current, data[i].Earlier));
       }

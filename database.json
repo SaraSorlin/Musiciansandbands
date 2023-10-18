@@ -1,37 +1,9 @@
 [
   {
     "Name": "band1",
-    "Info": "Band",
-    "Yearstarted": 0,
-    "Current": [
-      null,
-      "musikern1"
-    ],
-    "Earlier": [
-      null
-    ]
-  },
-  {
-    "Name": "band2",
-    "Info": "Band",
-    "Yearstarted": 2019,
+    "Info": 222,
     "Current": [
       null
-    ],
-    "Earlier": [
-      null
-    ]
-  },
-  {
-    "Name": "musikern1",
-    "Info": "Musiker",
-    "Yearbirth": 2021,
-    "Instrument": [
-      null
-    ],
-    "Current": [
-      null,
-      "band1"
     ],
     "Earlier": [
       null
