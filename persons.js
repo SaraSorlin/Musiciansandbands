@@ -58,11 +58,10 @@ export default class Personer {
       musiker.current.push(band.name);
     }
     else
-      console.log("Musikern tillhörde redan i bandet")
+      console.log(`${musiker.name} är redan medlem i bandet ${band.name}.`);
 
     this.#updateJsonFile();
   }
-
 
 
 
