@@ -80,6 +80,7 @@ while (run) {
 
 
     case "5": // Lägg till en musiker till ett band
+      console.clear()
       personLista.skrivUtPersoner();
       const musikerIndex = Number(prompt('Ange numret för musikanten i listan som skall läggas till ett band: ')) - 1; // drar bort 1 då index börjar på 0
       const bandIndex = Number(prompt('Ange numret som bandet har i listan: ')) - 1;
@@ -87,7 +88,7 @@ while (run) {
       if (!isNaN(musikerIndex && bandIndex) && musikerIndex < personLista.getLength() && bandIndex < personLista.getLength()) {
         personLista.addMusikerToBand(musikerIndex, bandIndex);
       } else {
-        console.log("Ogiltigt inmatning ange ett tal som är inom giltigt område enligt listan.");
+        prompt("Ogiltigt inmatning du angav ett tal som inte är inom giltigt område.");
       }
 
       prompt('Tryck enter för att återgå till menyn')

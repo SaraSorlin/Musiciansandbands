@@ -57,6 +57,9 @@ export default class Personer {
     if (!musiker.current.includes(band.name)) {
       musiker.current.push(band.name);
     }
+    else
+      console.log("Musikern tillhörde redan i bandet")
+
     this.#updateJsonFile();
   }
 
@@ -86,6 +89,6 @@ export default class Personer {
     }
 
     fs.writeFileSync('./database.json', JSON.stringify(tempList, null, 2));
-    console.log('Data written to file');
+    console.log('Data basen är uppdaterad med förändringarna');
   }
 }

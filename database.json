@@ -4,7 +4,9 @@
     "Info": "Band",
     "Yearstarted": 2020,
     "Yearended": "",
-    "Current": [],
+    "Current": [
+      "musiker2"
+    ],
     "Earlier": []
   },
   {
@@ -12,9 +14,7 @@
     "Info": "Band",
     "Yearstarted": 2023,
     "Yearended": "",
-    "Current": [
-      "musiker2"
-    ],
+    "Current": [],
     "Earlier": []
   },
   {
@@ -23,7 +23,7 @@
     "Yearbirth": 1979,
     "Instrument": [],
     "Current": [
-      "band3"
+      "band1"
     ],
     "Earlier": []
   },
