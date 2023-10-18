@@ -43,6 +43,25 @@ export default class Personer {
     this.#updateJsonFile(); // Uppdaterar "databasen.json".
   }
 
+  addMusikerToBand(musikerIndex, bandIndex) {
+
+    const band = this.#persons[bandIndex];
+    const musiker = this.#persons[musikerIndex];
+
+    // Lägger till musiker i current band
+    if (!band.current.includes(musiker.name)) {
+      band.current.push(musiker.name);
+    }
+
+    // Lägger till bandet i musikerns current band
+    if (!musiker.current.includes(band.name)) {
+      musiker.current.push(band.name);
+    }
+    this.#updateJsonFile();
+  }
+
+
+
 
   removePersonFromList(index) {
     this.#persons.splice(index, 1);
