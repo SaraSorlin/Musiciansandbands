@@ -36,7 +36,7 @@ while (run) {
   console.log('5. Lägg till en musiker till ett band');
   console.log('6. Ta bort en musiker från ett band');
   console.log('7. Skriv ut inlaggda musiker och band');
-  console.log('8. Avsluta programmet'); a
+  console.log('8. Avsluta programmet');
   console.log('');
 
   let val = prompt('Välj ett meny vall: ');
