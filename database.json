@@ -1,0 +1,27 @@
+[
+  {
+    "Name": "band1",
+    "Info": "Band",
+    "Yearstarted": 2021,
+    "Current": [
+      null
+    ],
+    "Earlier": [
+      null
+    ]
+  },
+  {
+    "Name": "musiker1",
+    "Info": "Musiker",
+    "Yearbirth": 2023,
+    "Instrument": [
+      null
+    ],
+    "Current": [
+      null
+    ],
+    "Earlier": [
+      null
+    ]
+  }
+]
