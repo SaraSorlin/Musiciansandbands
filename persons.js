@@ -33,11 +33,11 @@ export default class Personer {
     for (let i = 0; i < this.#persons.length; i++) {
       if (this.#persons[i] instanceof Band) {
 
-        console.log(`${i + 1}. Namn: ${this.#persons[i].name},  Information: ${this.#persons[i].info},     Start: ${this.#persons[i].yearstarted}, Slut: ${this.#persons[i].yearended},Medlemmar: ${this.#persons[i].current},           Tidigare: ${this.#persons[i].earlier}`);
+        console.log(`${i + 1}. Namn: ${this.#persons[i].name},        Information: ${this.#persons[i].info},     Start: ${this.#persons[i].yearstarted},    Slut: ${this.#persons[i].yearended},    Medlemmar: ${this.#persons[i].current},           Tidigare: ${this.#persons[i].earlier}`);
       }
       else if (this.#persons[i] instanceof Musiker) {
 
-        console.log(`${i + 1}. Namn: ${this.#persons[i].name},  Information: ${this.#persons[i].info},  Född: ${this.#persons[i].yearbirth},  Instrument: ${this.#persons[i].instruments},    Medlemmar: ${this.#persons[i].current},           Tidigare: ${this.#persons[i].earlier}`);
+        console.log(`${i + 1}. Namn: ${this.#persons[i].name},      Information: ${this.#persons[i].info},  Född: ${this.#persons[i].yearbirth},    Instrument: ${this.#persons[i].instruments},     Medlemmar: ${this.#persons[i].current},           Tidigare: ${this.#persons[i].earlier}`);
 
       }
 
@@ -101,13 +101,27 @@ export default class Personer {
     }
   }
 
-
-
-
   removePersonFromList(index) {
+    const remove = this.#persons[index];
+
+    if (remove instanceof Musiker) {
+      // Går igenom samtliga arrayer och tarbort namnet ifrån current and earlier lista 
+      for (const person of this.#persons) {
+        const currentIdx = person.current.indexOf(remove.name);
+        if (currentIdx !== -1) {
+          person.current.splice(currentIdx, 1);
+        }
+        const earlierIdx = person.earlier.indexOf(remove.name);
+        if (earlierIdx !== -1) {
+          person.earlier.splice(earlierIdx, 1);
+        }
+      }
+    }
+
     this.#persons.splice(index, 1);
-    this.#updateJsonFile(); // Uppdaterar "Hundar.json".
+    this.#updateJsonFile(); // Updatera "database.json".
   }
+
 
   getLength() {
     return this.#persons.length;

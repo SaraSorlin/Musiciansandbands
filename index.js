@@ -82,6 +82,7 @@ while (run) {
     case "5": // Lägg till en musiker till ett band
       console.clear()
       personLista.skrivUtPersoner();
+      console.log()
       const musikerIndex = Number(prompt('Ange numret för musikanten i listan som skall läggas till ett band: ')) - 1; // drar bort 1 då index börjar på 0
       const bandIndex = Number(prompt('Ange numret som bandet har i listan: ')) - 1;
 
@@ -98,7 +99,7 @@ while (run) {
     case "6": // Ta bort en musiker ifrån ett band
       console.clear();
       personLista.skrivUtPersoner();
-
+      console.log()
       const musikerIndexToRemove = Number(prompt('Ange numret för musikanten som ska tas bort från ett band: ')) - 1;
       const bandIndexToRemoveFrom = Number(prompt('Ange numret som bandet har i listan: ')) - 1;
 
