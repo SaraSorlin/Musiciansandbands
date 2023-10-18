@@ -8,9 +8,9 @@ export default class Band {
   #current;
   #earlier;
 
-  constructor(name, info = "Band", yearstarted, yearended, current, earlier) {
+  constructor(name, yearstarted, yearended, current, earlier) {
     this.#name = name;
-    this.#info = info;
+    this.#info = 'Band';
     this.#yearstarted = yearstarted;
     this.#yearended = yearended;
     this.#current = [current];
@@ -79,6 +79,7 @@ export default class Band {
       Yearended: this.#yearended,
       Current: this.#current,
       Earlier: this.#earlier
+
     };
   }
 }
