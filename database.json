@@ -4,7 +4,9 @@
     "Info": "Band",
     "Yearstarted": 2021,
     "Yearended": "",
-    "Current": [],
+    "Current": [
+      "musikern1"
+    ],
     "Earlier": []
   },
   {
@@ -12,7 +14,9 @@
     "Info": "Musiker",
     "Yearbirth": 2023,
     "Instrument": [],
-    "Current": [],
+    "Current": [
+      "Bandet1"
+    ],
     "Earlier": []
   }
 ]
