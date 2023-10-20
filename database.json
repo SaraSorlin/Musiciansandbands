@@ -47,5 +47,24 @@
     "Earlier": [
       "Da band 1"
     ]
+  },
+  {
+    "Name": "the killer band",
+    "Info": "Band",
+    "Yearstarted": 2019,
+    "Current": [],
+    "Earlier": [
+      "the screamer"
+    ]
+  },
+  {
+    "Name": "the screamer",
+    "Info": "Musiker",
+    "Yearbirth": 2024,
+    "Instrument": [],
+    "Current": [],
+    "Earlier": [
+      "the killer band"
+    ]
   }
 ]

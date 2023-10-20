@@ -40,7 +40,7 @@ while (run) {
   console.log('8. Avsluta programmet');
   console.log('');
 
-  let val = prompt('Välj ett meny vall: ');
+  let val = prompt('Välj ett meny val: ');
 
 
   switch (val) {
@@ -73,6 +73,7 @@ while (run) {
         prompt('Ogiltigt inmatning av år ange ett tal!, Tryck enter för att återgå till menyn.')
       }
       break;
+
 
 
     case "4": // Ta bort en musiker
