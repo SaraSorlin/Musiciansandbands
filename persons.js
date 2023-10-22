@@ -50,8 +50,8 @@ export default class Personer {
   }
 
 
-  addMusikerToList(namemusiker, yearbirth) {
-    this.#persons.push(new Musiker(namemusiker, yearbirth));
+  addMusikerToList(namemusiker, yearbirth, instrument) {
+    this.#persons.push(new Musiker(namemusiker, yearbirth, instrument));
     this.#updateJsonFile(); // Uppdaterar "databasen.json". 
   }
 

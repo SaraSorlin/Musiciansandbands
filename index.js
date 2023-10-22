@@ -67,8 +67,9 @@ while (run) {
       console.clear()
       const nameofartist = prompt('Ange namnet på musikanten: ');
       const yearbirth = Number(prompt('Ange födelse året: '));
+      const instrument = prompt('Ange vilket instrument musikern använder: ');
       if (!isNaN(yearbirth)) {
-        personLista.addMusikerToList(nameofartist, yearbirth);
+        personLista.addMusikerToList(nameofartist, yearbirth, instrument);
       } else {
         prompt('Ogiltigt inmatning av år ange ett tal!, Tryck enter för att återgå till menyn.')
       }
