@@ -29,7 +29,7 @@
     "Name": "m1",
     "Info": "Musiker",
     "Yearbirth": 2024,
-    "Instrument": [],
+    "Instrument": 1,
     "Current": [
       "b1",
       "b2"
@@ -40,7 +40,7 @@
     "Name": "m2",
     "Info": "Musiker",
     "Yearbirth": 2023,
-    "Instrument": [],
+    "Instrument": 1,
     "Current": [
       "b2"
     ],
@@ -50,7 +50,7 @@
     "Name": "sara",
     "Info": "Musiker",
     "Yearbirth": 1982,
-    "Instrument": null,
+    "Instrument": 1,
     "Current": [],
     "Earlier": []
   },
@@ -58,7 +58,7 @@
     "Name": "s",
     "Info": "Musiker",
     "Yearbirth": 22,
-    "Instrument": null,
+    "Instrument": 1,
     "Current": [],
     "Earlier": []
   },
@@ -66,7 +66,7 @@
     "Name": "r",
     "Info": "Musiker",
     "Yearbirth": 33,
-    "Instrument": null,
+    "Instrument": 1,
     "Current": [],
     "Earlier": []
   },
@@ -74,7 +74,47 @@
     "Name": "asd",
     "Info": "Musiker",
     "Yearbirth": 2,
-    "Instrument": null,
+    "Instrument": 1,
+    "Current": [],
+    "Earlier": []
+  },
+  {
+    "Name": "",
+    "Info": "Musiker",
+    "Yearbirth": 0,
+    "Instrument": 1,
+    "Current": [],
+    "Earlier": []
+  },
+  {
+    "Name": "",
+    "Info": "Musiker",
+    "Yearbirth": 0,
+    "Instrument": 1,
+    "Current": [],
+    "Earlier": []
+  },
+  {
+    "Name": "fff",
+    "Info": "Musiker",
+    "Yearbirth": 333,
+    "Instrument": 1,
+    "Current": [],
+    "Earlier": []
+  },
+  {
+    "Name": "kalle",
+    "Info": "Musiker",
+    "Yearbirth": 2021,
+    "Instrument": 1,
+    "Current": [],
+    "Earlier": []
+  },
+  {
+    "Name": "nyakillen",
+    "Info": "Musiker",
+    "Yearbirth": 2111,
+    "Instrument": 1,
     "Current": [],
     "Earlier": []
   }

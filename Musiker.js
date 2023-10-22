@@ -8,11 +8,12 @@ export default class Musiker {
   #current;
   #earlier;
 
-  constructor(name, yearbirth, instruments = [], current = [], earlier = []) {
+  constructor(name, yearbirth, instrument, current = [], earlier = []) {
     this.#name = name;
     this.#info = 'Musiker';
     this.#yearbirth = yearbirth;
-    this.#instruments = instruments;
+    this.#instruments = []
+    this.#instruments.push(instrument);
     this.#current = current;
     this.#earlier = earlier;
   }
