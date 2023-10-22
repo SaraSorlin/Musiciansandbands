@@ -108,21 +108,17 @@ export default class Personer {
 
   removePersonFromList(index) {
     const remove = this.#persons[index];
-
-    if (remove instanceof Musiker) {
-      // Går igenom samtliga arrayer och tarbort namnet ifrån current and earlier lista 
-      for (const person of this.#persons) {
-        const currentIdx = person.current.indexOf(remove.name);
-        if (currentIdx !== -1) {
-          person.current.splice(currentIdx, 1);
-        }
-        const earlierIdx = person.earlier.indexOf(remove.name);
-        if (earlierIdx !== -1) {
-          person.earlier.splice(earlierIdx, 1);
-        }
+    // Går igenom samtliga arrayer och tarbort namnet ifrån current and earlier lista 
+    for (const person of this.#persons) {
+      const currentIdx = person.current.indexOf(remove.name);
+      if (currentIdx !== -1) {
+        person.current.splice(currentIdx, 1);
+      }
+      const earlierIdx = person.earlier.indexOf(remove.name);
+      if (earlierIdx !== -1) {
+        person.earlier.splice(earlierIdx, 1);
       }
     }
-
     this.#persons.splice(index, 1);
     this.#updateJsonFile(); // Updatera "database.json".
   }

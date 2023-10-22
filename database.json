@@ -1,58 +1,49 @@
 [
   {
-    "Name": "Da band 1",
+    "Name": "b1",
     "Info": "Band",
-    "Yearstarted": 2019,
-    "Current": [],
-    "Earlier": [
-      "the singer"
-    ]
-  },
-  {
-    "Name": "The rockers band",
-    "Info": "Band",
-    "Yearstarted": 2023,
+    "Yearstarted": 2020,
     "Current": [
-      "the singer"
+      "m1"
     ],
     "Earlier": []
   },
   {
-    "Name": "The kings band",
+    "Name": "b2",
     "Info": "Band",
-    "Yearstarted": 1990,
+    "Yearstarted": 2021,
+    "Current": [
+      "m2",
+      "m1"
+    ],
+    "Earlier": []
+  },
+  {
+    "Name": "b3",
+    "Info": "Band",
+    "Yearstarted": 2022,
     "Current": [],
     "Earlier": []
   },
   {
-    "Name": "the singer",
-    "Info": "Musiker",
-    "Yearbirth": 1979,
-    "Instrument": [],
-    "Current": [
-      "The rockers band"
-    ],
-    "Earlier": [
-      "Da band 1"
-    ]
-  },
-  {
-    "Name": "the killer band",
-    "Info": "Band",
-    "Yearstarted": 2019,
-    "Current": [],
-    "Earlier": [
-      "the screamer"
-    ]
-  },
-  {
-    "Name": "the screamer",
+    "Name": "m1",
     "Info": "Musiker",
     "Yearbirth": 2024,
     "Instrument": [],
-    "Current": [],
-    "Earlier": [
-      "the killer band"
-    ]
+    "Current": [
+      "b1",
+      "b2"
+    ],
+    "Earlier": []
+  },
+  {
+    "Name": "m2",
+    "Info": "Musiker",
+    "Yearbirth": 2023,
+    "Instrument": [],
+    "Current": [
+      "b2"
+    ],
+    "Earlier": []
   }
 ]
