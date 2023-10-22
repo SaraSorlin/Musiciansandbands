@@ -31,7 +31,9 @@
     "Info": "Musiker",
     "Yearbirth": 1982,
     "Instrument": [
-      "sjunger"
+      [
+        "sjunger"
+      ]
     ],
     "Current": [
       "The Rockers"
@@ -43,7 +45,9 @@
     "Info": "Musiker",
     "Yearbirth": 1979,
     "Instrument": [
-      "trummor"
+      [
+        "trummor"
+      ]
     ],
     "Current": [
       "The Rockers"
@@ -55,11 +59,23 @@
     "Info": "Musiker",
     "Yearbirth": 2017,
     "Instrument": [
-      "scallra"
+      [
+        "scallra"
+      ]
     ],
     "Current": [],
     "Earlier": [
       "Band1"
     ]
+  },
+  {
+    "Name": "sara",
+    "Info": "Musiker",
+    "Yearbirth": 1982,
+    "Instrument": [
+      "inget"
+    ],
+    "Current": [],
+    "Earlier": []
   }
 ]

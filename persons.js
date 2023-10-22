@@ -28,6 +28,8 @@ export default class Personer {
   }
 
   skrivUtPersoner() {
+    const year = new Date().getFullYear()
+
     for (let i = 0; i < this.#persons.length; i++) {
       const person = this.#persons[i];
 
@@ -36,6 +38,7 @@ export default class Personer {
 
       if (person instanceof Musiker) {
         console.log(`   Född: ${person.yearbirth}`);
+        console.log(`   Ålder: ${year - person.yearbirth}`);
         console.log(`   Instrument: ${person.instruments}`);
       } else if (person instanceof Band) {
         console.log(`   Bildades: ${person.yearstarted}`);
