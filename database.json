@@ -1,121 +1,65 @@
 [
   {
-    "Name": "b1",
+    "Name": "Band1",
     "Info": "Band",
-    "Yearstarted": 2020,
-    "Current": [
-      "m1"
-    ],
-    "Earlier": []
+    "Yearstarted": 2019,
+    "Yearended": 2023,
+    "Current": [],
+    "Earlier": [
+      "Namn:King Instrument:scallra År:2023"
+    ]
   },
   {
-    "Name": "b2",
-    "Info": "Band",
-    "Yearstarted": 2021,
-    "Current": [
-      "m2",
-      "m1"
-    ],
-    "Earlier": []
-  },
-  {
-    "Name": "b3",
+    "Name": "The Rockers",
     "Info": "Band",
     "Yearstarted": 2022,
+    "Current": [
+      "Namn:The screamer Instrument:sjunger År:2023",
+      "Namn:Banger Instrument:trummor År:2023"
+    ],
+    "Earlier": []
+  },
+  {
+    "Name": "The singer band",
+    "Info": "Band",
+    "Yearstarted": 2017,
     "Current": [],
     "Earlier": []
   },
   {
-    "Name": "m1",
-    "Info": "Musiker",
-    "Yearbirth": 2024,
-    "Instrument": 1,
-    "Current": [
-      "b1",
-      "b2"
-    ],
-    "Earlier": []
-  },
-  {
-    "Name": "m2",
-    "Info": "Musiker",
-    "Yearbirth": 2023,
-    "Instrument": 1,
-    "Current": [
-      "b2"
-    ],
-    "Earlier": []
-  },
-  {
-    "Name": "sara",
+    "Name": "The screamer",
     "Info": "Musiker",
     "Yearbirth": 1982,
-    "Instrument": 1,
-    "Current": [],
+    "Instrument": [
+      "sjunger"
+    ],
+    "Current": [
+      "The Rockers"
+    ],
     "Earlier": []
   },
   {
-    "Name": "s",
+    "Name": "Banger",
     "Info": "Musiker",
-    "Yearbirth": 22,
-    "Instrument": 1,
-    "Current": [],
+    "Yearbirth": 1979,
+    "Instrument": [
+      "trummor"
+    ],
+    "Current": [
+      "The Rockers"
+    ],
     "Earlier": []
   },
   {
-    "Name": "r",
+    "Name": "King",
     "Info": "Musiker",
-    "Yearbirth": 33,
-    "Instrument": 1,
+    "Yearbirth": 2017,
+    "Instrument": [
+      "scallra"
+    ],
     "Current": [],
-    "Earlier": []
-  },
-  {
-    "Name": "asd",
-    "Info": "Musiker",
-    "Yearbirth": 2,
-    "Instrument": 1,
-    "Current": [],
-    "Earlier": []
-  },
-  {
-    "Name": "",
-    "Info": "Musiker",
-    "Yearbirth": 0,
-    "Instrument": 1,
-    "Current": [],
-    "Earlier": []
-  },
-  {
-    "Name": "",
-    "Info": "Musiker",
-    "Yearbirth": 0,
-    "Instrument": 1,
-    "Current": [],
-    "Earlier": []
-  },
-  {
-    "Name": "fff",
-    "Info": "Musiker",
-    "Yearbirth": 333,
-    "Instrument": 1,
-    "Current": [],
-    "Earlier": []
-  },
-  {
-    "Name": "kalle",
-    "Info": "Musiker",
-    "Yearbirth": 2021,
-    "Instrument": 1,
-    "Current": [],
-    "Earlier": []
-  },
-  {
-    "Name": "nyakillen",
-    "Info": "Musiker",
-    "Yearbirth": 2111,
-    "Instrument": 1,
-    "Current": [],
-    "Earlier": []
+    "Earlier": [
+      "Band1"
+    ]
   }
 ]

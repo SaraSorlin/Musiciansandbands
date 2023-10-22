@@ -27,7 +27,6 @@ export default class Personer {
     }
   }
 
-
   skrivUtPersoner() {
     for (let i = 0; i < this.#persons.length; i++) {
       const person = this.#persons[i];
@@ -39,16 +38,14 @@ export default class Personer {
         console.log(`   Född: ${person.yearbirth}`);
         console.log(`   Instrument: ${person.instruments}`);
       } else if (person instanceof Band) {
-        console.log(`   Start: ${person.yearstarted}`);
-        console.log(`   Slut: ${person.yearended || 'N/A'}`);
+        console.log(`   Bildades: ${person.yearstarted}`);
+        console.log(`   Upplöstes: ${person.yearended || ''}`);
       }
-
-      console.log(`   Medlemmar: ${person.current.join(', ') || 'Inga nuvarande medlemmar'}`);
-      console.log(`   Tidigare: ${person.earlier.join(', ') || 'Inga tidigare medlemmar'}`);
+      console.log(`   Medlem: ${person.current.join(', ') || 'Inga'}`);
+      console.log(`   Tidigare: ${person.earlier.join(', ') || 'Inga'}`);
       console.log('');
     }
   }
-
 
   addMusikerToList(namemusiker, yearbirth, instrument) {
     this.#persons.push(new Musiker(namemusiker, yearbirth, instrument));
@@ -61,13 +58,13 @@ export default class Personer {
   }
 
   addMusikerToBand(musikerIndex, bandIndex) {
-
+    const year = new Date().getFullYear()
     const band = this.#persons[bandIndex];
     const musiker = this.#persons[musikerIndex];
 
     // Lägger till musiker i current band
     if (!band.current.includes(musiker.name)) {
-      band.current.push(musiker.name);
+      band.current.push(`Namn:${musiker.name} Instrument:${musiker.instruments} År:${year}`);
     }
 
     // Lägger till bandet i musikerns current band
@@ -77,52 +74,80 @@ export default class Personer {
     else
       console.log(`${musiker.name} är redan medlem i bandet ${band.name}.`);
 
+
     this.#updateJsonFile();
   }
 
   removeMusikerFromBand(musikerIndex, bandIndex) {
+    const year = new Date().getFullYear();
     const band = this.#persons[bandIndex];
     const musiker = this.#persons[musikerIndex];
 
     if (band && musiker) {
-      const musikerIndexIncurrent = band.current.indexOf(musiker.name);
-      const bandIndexcurrent = musiker.current.indexOf(band.name);
+      const musikerIndexInCurrent = band.current.findIndex(member => member.includes(musiker.name));
 
-      if (musikerIndexIncurrent !== -1) {
-        band.current.splice(musikerIndexIncurrent, 1);
-        musiker.current.splice(bandIndexcurrent, 1);
+      if (musikerIndexInCurrent !== -1) {
+        const memberInfo = band.current[musikerIndexInCurrent];
+        const [, musikerName, instruments] = memberInfo.match(/Namn:(.*) Instrument:(.*) År:/);
 
-        band.earlier.push(musiker.name);
+        band.current.splice(musikerIndexInCurrent, 1);
+        musiker.current.splice(musiker.current.indexOf(band.name), 1);
+
+        band.earlier.push(`Namn:${musikerName} Instrument:${instruments} År:${year}`);
         musiker.earlier.push(band.name);
+
+        //Kontrollera om bandet saknar medlemmar efter bortagning om så sätt år upphört
+        if (band.current.length === 0) {
+          band.yearended = year;
+        }
+
         this.#updateJsonFile();
-        return musiker.name;
-      } else {
+      }
+      else {
         console.log(`${musiker.name} är inte medlem i bandet ${band.name}.`);
         return null;
       }
-    } else {
-      console.log("Ogiltig inmatning. Ange giltiga musiker- och bandindex.");
+    }
+    else {
+      console.log("Ogiltig inmatning. Ange giltiga musiker / bandindex.");
       return null;
     }
   }
 
   removePersonFromList(index) {
     const remove = this.#persons[index];
-    // Går igenom samtliga arrayer och tarbort namnet ifrån current and earlier lista 
-    for (const person of this.#persons) {
-      const currentIdx = person.current.indexOf(remove.name);
-      if (currentIdx !== -1) {
-        person.current.splice(currentIdx, 1);
+
+    if (remove instanceof Musiker) {
+      // Gå igenom alla band och kontrollera om musikern är medlem i bandet om så ta bort musikerns information ifrån current och earlier
+      for (const person of this.#persons) {
+        if (person instanceof Band) {
+          const currentIdx = person.current.findIndex(member => member.includes(remove.name));
+          if (currentIdx !== -1) {
+            const [, musikerName, instruments] = person.current[currentIdx].match(/Namn:(.*) Instrument:(.*) År:/);
+            person.current.splice(currentIdx, 1);
+            person.earlier.push(`Namn:${musikerName} Instrument:${instruments} År:${new Date().getFullYear()}`);
+          }
+        }
       }
-      const earlierIdx = person.earlier.indexOf(remove.name);
-      if (earlierIdx !== -1) {
-        person.earlier.splice(earlierIdx, 1);
+    } else if (remove instanceof Band) {
+      // Gå igenom alla musiker och kontrollera om dom är medlem i bandet om så ta bort band namnet ur musikerns current and earlier
+      for (const person of this.#persons) {
+        if (person instanceof Musiker) {
+          const currentIdx = person.current.indexOf(remove.name);
+          if (currentIdx !== -1) {
+            person.current.splice(currentIdx, 1);
+          }
+          const earlierIdx = person.earlier.indexOf(remove.name);
+          if (earlierIdx !== -1) {
+            person.earlier.splice(earlierIdx, 1);
+          }
+        }
       }
     }
-    this.#persons.splice(index, 1);
-    this.#updateJsonFile(); // Updatera "database.json".
-  }
 
+    this.#persons.splice(index, 1);
+    this.#updateJsonFile(); // Update "database.json".
+  }
 
   getLength() {
     return this.#persons.length;
@@ -144,4 +169,5 @@ export default class Personer {
     fs.writeFileSync('./database.json', JSON.stringify(tempList, null, 2));
     console.log('Data basen är uppdaterad med förändringarna');
   }
+
 }
