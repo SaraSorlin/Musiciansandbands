@@ -3,9 +3,7 @@
     "Name": "Da band 1",
     "Info": "Band",
     "Yearstarted": 2019,
-    "Current": [
-      "da singer"
-    ],
+    "Current": [],
     "Earlier": [
       "the singer"
     ]
@@ -24,16 +22,6 @@
     "Info": "Band",
     "Yearstarted": 1990,
     "Current": [],
-    "Earlier": []
-  },
-  {
-    "Name": "da singer",
-    "Info": "Musiker",
-    "Yearbirth": 2022,
-    "Instrument": [],
-    "Current": [
-      "Da band 1"
-    ],
     "Earlier": []
   },
   {
