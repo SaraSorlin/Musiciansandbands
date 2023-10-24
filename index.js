@@ -75,8 +75,6 @@ while (run) {
       }
       break;
 
-
-
     case "4": // Ta bort en musiker
       remove();
       break;
