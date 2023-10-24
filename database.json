@@ -15,15 +15,20 @@
     "Yearstarted": 2022,
     "Current": [
       "Namn:The screamer Instrument:sjunger År:2023",
-      "Namn:Banger Instrument:trummor År:2023"
+      "King"
     ],
-    "Earlier": []
+    "Earlier": [
+      "Namn:Banger Instrument:trummor År:2023"
+    ]
   },
   {
     "Name": "The singer band",
     "Info": "Band",
     "Yearstarted": 2017,
-    "Current": [],
+    "Current": [
+      "Namn:The singer band Instrument:undefined År:2023",
+      "The singer band"
+    ],
     "Earlier": []
   },
   {
@@ -32,21 +37,13 @@
     "Yearbirth": 1982,
     "Instrument": [
       [
-        "sjunger"
-      ]
-    ],
-    "Current": [
-      "The Rockers"
-    ],
-    "Earlier": []
-  },
-  {
-    "Name": "Banger",
-    "Info": "Musiker",
-    "Yearbirth": 1979,
-    "Instrument": [
-      [
-        "trummor"
+        [
+          [
+            [
+              "sjunger"
+            ]
+          ]
+        ]
       ]
     ],
     "Current": [
@@ -60,10 +57,18 @@
     "Yearbirth": 2017,
     "Instrument": [
       [
-        "scallra"
+        [
+          [
+            [
+              "scallra"
+            ]
+          ]
+        ]
       ]
     ],
-    "Current": [],
+    "Current": [
+      "Namn:The Rockers Instrument:undefined År:2023"
+    ],
     "Earlier": [
       "Band1"
     ]
@@ -73,8 +78,66 @@
     "Info": "Musiker",
     "Yearbirth": 1982,
     "Instrument": [
-      "inget"
+      [
+        [
+          [
+            "inget"
+          ]
+        ]
+      ]
     ],
+    "Current": [],
+    "Earlier": []
+  },
+  {
+    "Name": "mille",
+    "Info": "Band",
+    "Yearstarted": 2020,
+    "Current": [],
+    "Earlier": []
+  },
+  {
+    "Name": "new kids",
+    "Info": "Band",
+    "Yearstarted": 1998,
+    "Current": [],
+    "Earlier": []
+  },
+  {
+    "Name": "Lisa",
+    "Info": "Musiker",
+    "Yearbirth": 2012,
+    "Instrument": [
+      [
+        [
+          "piano"
+        ]
+      ]
+    ],
+    "Current": [],
+    "Earlier": []
+  },
+  {
+    "Name": "cia",
+    "Info": "Band",
+    "Yearstarted": 1998,
+    "Current": [],
+    "Earlier": []
+  },
+  {
+    "Name": "peter",
+    "Info": "Musiker",
+    "Yearbirth": 2000,
+    "Instrument": [
+      "piano"
+    ],
+    "Current": [],
+    "Earlier": []
+  },
+  {
+    "Name": "The screamer",
+    "Info": "Band",
+    "Yearstarted": 2000,
     "Current": [],
     "Earlier": []
   }

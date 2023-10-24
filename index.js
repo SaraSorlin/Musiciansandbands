@@ -10,7 +10,7 @@ const personLista = new Personer();
 function remove() {
   console.log()
   personLista.skrivUtPersoner();
-  const val = prompt("Ange index numret på det du vill tabort! ->");
+  const val = prompt("Ange index numret på det du vill ta bort! ->");
 
   if (Number(val).toString() === "NaN") { // Kollar så att val går att parsa till ett nummer.
     console.log("Måste skriva in ett tal!");
@@ -48,7 +48,7 @@ while (run) {
     case "1": // Skapa ett band
       console.clear()
       const nameofband = prompt('Ange namnet på bandet: ');
-      const yearstarted = Number(prompt('Ange årtalet som bandet skappades: '));
+      const yearstarted = Number(prompt('Ange årtalet som bandet skapades: '));
       if (!isNaN(yearstarted)) {
         personLista.addBandToList(nameofband, yearstarted);
       } else {
@@ -92,7 +92,7 @@ while (run) {
       if (!isNaN(musikerIndex && bandIndex) && musikerIndex < personLista.getLength() && bandIndex < personLista.getLength()) {
         personLista.addMusikerToBand(musikerIndex, bandIndex);
       } else {
-        prompt("Ogiltigt inmatning du angav ett tal som inte är inom giltigt område.");
+        prompt("Ogiltigt inmatning du angav ett tal som inte är inom giltigt område."); ''
       }
 
       prompt('Tryck enter för att återgå till menyn')
@@ -130,7 +130,7 @@ while (run) {
 
 
     default:
-      console.log('Ogiltigt meny vall försök igen!');
+      console.log('Ogiltigt meny val försök igen!');
       prompt('Tryck enter för att återgå till menyn')
       break;
 
