@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "Name": "pink",
+    "Info": "Band",
+    "Yearstarted": 1998,
+    "Current": [],
+    "Earlier": []
+  },
+  {
+    "Name": "boys",
+    "Info": "Band",
+    "Yearstarted": 2012,
+    "Current": [],
+    "Earlier": []
+  }
+]
