@@ -69,8 +69,6 @@ export default class Band {
   }
 
 
-  // Skapar ett objekt med bandets egenskaps information. 
-  // Används när vi ska skicka in till "databasen.json". 
   databandInfo() {
     return {
       Name: this.#name,

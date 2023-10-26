@@ -1,16 +1,64 @@
 [
   {
-    "Name": "pink",
+    "Name": "Sara",
     "Info": "Band",
-    "Yearstarted": 1998,
-    "Current": [],
+    "Yearstarted": 1982,
+    "Current": [
+      "Namn:Mille Instrument:sjunger År:2023"
+    ],
+    "Earlier": [
+      "Namn:minella Instrument:trummor År:2023"
+    ]
+  },
+  {
+    "Name": "Mille",
+    "Info": "Musiker",
+    "Yearbirth": 2017,
+    "Instrument": "sjunger",
+    "Current": [
+      "Sara"
+    ],
     "Earlier": []
   },
   {
-    "Name": "boys",
-    "Info": "Band",
-    "Yearstarted": 2012,
+    "Name": "minella",
+    "Info": "Musiker",
+    "Yearbirth": 2017,
+    "Instrument": "trummor",
     "Current": [],
-    "Earlier": []
+    "Earlier": [
+      "Sara"
+    ]
+  },
+  {
+    "Name": "the rockers",
+    "Info": "Band",
+    "Yearstarted": 2019,
+    "Yearended": 2023,
+    "Current": [],
+    "Earlier": [
+      "Namn:kalle Instrument:sjunger År:2023",
+      "Namn:stina Instrument:piano År:2023"
+    ]
+  },
+  {
+    "Name": "kalle",
+    "Info": "Musiker",
+    "Yearbirth": 1942,
+    "Instrument": "sjunger",
+    "Current": [],
+    "Earlier": [
+      "the rockers"
+    ]
+  },
+  {
+    "Name": "stina",
+    "Info": "Musiker",
+    "Yearbirth": 1947,
+    "Instrument": "piano",
+    "Current": [],
+    "Earlier": [
+      "the rockers"
+    ]
   }
 ]

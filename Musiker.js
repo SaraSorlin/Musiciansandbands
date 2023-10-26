@@ -8,12 +8,11 @@ export default class Musiker {
   #current;
   #earlier;
 
-  constructor(name, yearbirth, instrument, current = [], earlier = []) {
+  constructor(name, yearbirth, instrument = [], current = [], earlier = []) {
     this.#name = name;
     this.#info = 'Musiker';
     this.#yearbirth = yearbirth;
-    this.#instruments = []
-    this.#instruments.push(instrument);
+    this.#instruments = instrument
     this.#current = current;
     this.#earlier = earlier;
   }
@@ -68,8 +67,6 @@ export default class Musiker {
   }
 
 
-  // Skapar ett objekt med musikerns egenskaps information. 
-  // Används när vi ska skicka in till "databasen.json". 
 
   datamusikerInfo() {
     return {
